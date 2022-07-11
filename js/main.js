@@ -20,6 +20,10 @@ $(document).ready(function() {
     LampCentX = LampRight + $(this).children('img').width()/2,
     LampCentY = LampBot + $(this).children('img').height()/2,
     LampCentBot = LampCentY + $(this).children('img').height()/2;
+    svgwidth = $('.svg' + i).width();
+    svgheight = $('.svg' + i).height();
+    $('.svg' + i).attr('viewBox', '0 0 '+ svgwidth +' ' + svgheight);
+
   });
   $('.left img').css('transform', 'rotate(60deg)');
   $('.center img').css('transform', 'rotate(30deg)');
@@ -40,8 +44,9 @@ $(document).ready(function() {
       top: dotY,
     });
   });
-
-
+  offset0 = $('#path0').css('stroke-dashoffset')
+  offset1 = $('#path1').css('stroke-dashoffset')
+  offset2 = $('#path2').css('stroke-dashoffset')
   $('.lamp img').click(function() {
     let check = $(this).attr('id')
     ch = $(this).attr('name')
@@ -51,44 +56,44 @@ $(document).ready(function() {
           filter: 'brightness(100%) drop-shadow(0px 20px 100px #995D0A)'
         });
         if(ch == 'left'){
-          $('.modal_left').delay(3000).slideToggle(1000);
+          $('.modal_left').delay(2500).slideToggle(1000);
           $('#path0').delay(500).animate({
-            'stroke-dashoffset': 800,
-          }, 3000);
+            'stroke-dashoffset': 0,
+          }, 3300);
         }
         if(ch == 'center'){
           $('#path1').delay(500).animate({
             'stroke-dashoffset': 0,
           }, 3000);
-          $('.modal_center').delay(3000).slideToggle(800);
+          $('.modal_center').delay(2500).slideToggle(800);
           $('.modal_center img').delay(3500).animate({
             opacity: 0.9
           })
         }
         if(ch == 'right'){
-          $('.modal_right').delay(3000).slideToggle(800);
+          $('.modal_right').delay(2500).slideToggle(800);
           $('#path2').delay(500).animate({
-            'stroke-dashoffset': 800,
-          }, 3000);
+            'stroke-dashoffset': 0,
+          }, 3300);
         }
         $(this).attr('id', 'on');
     } else if(check == 'on'){
         if(ch == 'left'){
           $('.modal_left').slideToggle(800);
           $('#path0').delay(500).animate({
-            'stroke-dashoffset': 2000,
+            'stroke-dashoffset': offset0,
           }, 3000);
         }
         if(ch == 'center'){
           $('.modal_center').slideToggle(800);
           $('#path1').delay(500).animate({
-            'stroke-dashoffset': 2000,
+            'stroke-dashoffset': offset1,
           }, 3000);
         }
         if(ch == 'right'){
           $('.modal_right').slideToggle(800);
           $('#path2').delay(500).animate({
-            'stroke-dashoffset': 2000,
+            'stroke-dashoffset': offset2,
           }, 3000);
         }
         setTimeout(() => {

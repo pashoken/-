@@ -91,6 +91,7 @@ a.neon_link, .neon_link:hover
   z-index: 1
   padding: 10px
   img
+    width: 90%
     opacity: 0
     margin-top: -30px
 .modal_right
@@ -112,21 +113,14 @@ a.neon_link, .neon_link:hover
     text-shadow:  0 0 5px #EB961E, 0 0 42px #995D0A
     user-select: none
     list-style-image: url("../images/plug2.png")
-.path0
-  stroke-dasharray: 2000
-  stroke-dashoffset: 2000
+.path0, .path2
+  stroke-dasharray: 1500
+  stroke-dashoffset: 1500
   animation-fill-mode: forwards
   z-index: 0
 .path1
   stroke-dasharray: 2000
   stroke-dashoffset: 2000
-  animation-fill-mode: forwards
-  z-index: 0
-.path2
-  stroke-dasharray: 2000
-  stroke-dashoffset: 2000
-  animation-fill-mode: forwards
-  z-index: 0
 .svg0
   filter: drop-shadow(0 0 15px #EB961E)
   position: absolute
@@ -189,23 +183,40 @@ a.neon_link, .neon_link:hover
     ul
       font-size: 2rem
 
-@media (max-width: 1500px)
+@media (max-width: 1320px)
   .modal_left, .modal_center, .modal_right
-    ul, .center_text
-      font-size: 1.2rem
-  .right
-    right: 7%
+    height: 300px
+    ul
+      font-size: 1rem
+    .center_text
+      font-size: 0.8rem
+  .center
+    bottom: 15%
   .modal_center
     padding: 0px
     img
       margin-top: 0px
-      width: 250px
-      height: 250px
+      width: 90%
   .modal_left
     -ms-hyphens: auto
     -webkit-hyphens: auto
     hyphens: auto
     word-break: break-all
     left: 4%
-  .svg0
-    width: 550px
+  .svg2, .svg0
+    max-width: 300px
+  .svg1
+    max-width: 400px
+    max-height: 75px
+  .path0
+    stroke-dasharray: 800
+    stroke-dashoffset: 800
+    d: path('M 0 0 C 35 30 55 0 105 30 C 145 75 35 55 105 30 C 145 5 195 70 215 30 C 250 0 165 10 215 30 C 245 45 285 55 300 5 ')
+  .path1
+    stroke-dasharray: 800
+    stroke-dashoffset: 800
+    d: path('M 0 0 C 0 40 55 0 95 25 C 145 60 45 60 95 25 C 125 0 230 35 260 10 C 295 0 400 20 365 45 C 345 65 280 45 175 70 ')
+  .path2
+    stroke-dasharray: 800
+    stroke-dashoffset: 800
+    d: path('M 0 0 C 50 40 85 80 120 35 C 155 0 280 20 230 55 C 205 145 150 30 230 55 C 280 60 272.5 92.5 280 165')
