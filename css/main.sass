@@ -59,7 +59,7 @@ a.neon_link, .neon_link:hover
 
 .modal_left
   width: 20%
-  height: 500px
+  height: 550px
   background-color: black
   position: absolute
   bottom: 5%
@@ -79,7 +79,7 @@ a.neon_link, .neon_link:hover
 .modal_center
   text-align: center
   width: 20%
-  height: 500px
+  height: 550px
   background-color: black
   position: absolute
   bottom: 5%
@@ -95,7 +95,7 @@ a.neon_link, .neon_link:hover
     margin-top: -30px
 .modal_right
   width: 20%
-  height: 500px
+  height: 550px
   background-color: black
   position: absolute
   bottom: 5%
@@ -105,6 +105,7 @@ a.neon_link, .neon_link:hover
   border-radius: 30px
   display: none
   z-index: 1
+  padding: 10px
   ul
     font-size: 1.5rem
     color: #E9B300
@@ -180,3 +181,31 @@ a.neon_link, .neon_link:hover
   color: #E9B300
   text-shadow:  0 0 5px #EB961E, 0 0 42px #995D0A
   user-select: none
+
+@media (min-width: 2200px)
+  .main_page
+    background: url(../images/bg.webp) 0px 0px
+  .modal_left, .modal_center, .modal_right
+    ul
+      font-size: 2rem
+
+@media (max-width: 1500px)
+  .modal_left, .modal_center, .modal_right
+    ul, .center_text
+      font-size: 1.2rem
+  .right
+    right: 7%
+  .modal_center
+    padding: 0px
+    img
+      margin-top: 0px
+      width: 250px
+      height: 250px
+  .modal_left
+    -ms-hyphens: auto
+    -webkit-hyphens: auto
+    hyphens: auto
+    word-break: break-all
+    left: 4%
+  .svg0
+    width: 550px
